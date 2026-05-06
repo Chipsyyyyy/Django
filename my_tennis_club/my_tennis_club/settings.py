@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i%-ia^&!=kf+n(eu%$9des=4mroa2nyorln#8z9pf5b$i(j=fd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*'] # When in production use the domain name e.g., yourdomain.com
 
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'my_tennis_club.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'masteruser',
+        'PASSWORD': 'ImD1i2014',
+        'HOST': 'beginner-django-project.ca9ok8gga529.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -115,4 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]

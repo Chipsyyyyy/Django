@@ -23,7 +23,7 @@ def main(request):
     return HttpResponse(template.render())
 
 def testing(request):
-    mydata = Member.objects.all()
+    mydata = Member.objects.all().values()
     template = loader.get_template('template.html')
     context = {
         'mymembers': mydata
