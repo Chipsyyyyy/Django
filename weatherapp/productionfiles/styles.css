@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.searchbar{
+    width: 100%;
+    height: 60px; 
+    background-color: black;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0
+ }
+
+ .weathercard{
+    margin: auto;
+    height: 800px;
+    width: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+ }
+
+ .weathericon{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 400px;
+    width: 400px;
+    border-radius: 15px;
+    background-color: black;
+ }
+
+ .city{
+
+ }
+
+ .temperature{
+
+ }
